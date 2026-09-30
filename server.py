@@ -1,10 +1,16 @@
+from dotenv import load_dotenv
+
+load_dotenv()
+
 from src.main import initialize_application
-from src.configs.settings import HOST, PORT
+
+
+app = initialize_application()
 
 
 if __name__ == "__main__":
 
-    app = initialize_application()
+    from src.configs.settings import HOST, PORT
 
     app.run(
         host=HOST,
