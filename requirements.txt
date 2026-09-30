@@ -1,5 +1,12 @@
+Flask
 groq
 python-dotenv
 pandas
 scikit-learn
 joblib
+redis
+gunicorn
+numpy
+openai
+google-genai
+mistralai
