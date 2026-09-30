@@ -1,0 +1,11 @@
+Model,Validation Accuracy,Test Accuracy,Macro Precision,Macro Recall,Macro F1,Weighted F1,Errors
+Logistic Regression,0.9793,0.9792,0.979,0.9802,0.9795,0.9792,18
+Linear SVM,0.9862,0.9873,0.9871,0.988,0.9875,0.9873,11
+Decision Tree,0.9516,0.9226,0.923,0.9222,0.9223,0.9228,67
+Random Forest,0.9848,0.9734,0.9731,0.974,0.9732,0.9734,23
+Extra Trees,0.9876,0.9827,0.9824,0.983,0.9825,0.9827,15
+Multinomial Naive Bayes,0.8907,0.888,0.9091,0.8851,0.8919,0.8905,97
+Complement Naive Bayes,0.9488,0.9434,0.9455,0.9433,0.9433,0.9427,49
+Bernoulli Naive Bayes,0.9488,0.9388,0.9442,0.9379,0.9403,0.9395,53
+SGD Classifier,0.9834,0.9873,0.9872,0.9881,0.9876,0.9873,11
+Ridge Classifier,0.9862,0.9873,0.9871,0.9882,0.9875,0.9872,11
