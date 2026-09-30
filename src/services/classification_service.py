@@ -93,13 +93,42 @@ MODEL_PATHS = {
 
 
 # ============================================================
-# LOAD MODELS
+# MODEL CACHE
 # ============================================================
 
-models = {
-    model_name: joblib.load(model_path)
-    for model_name, model_path in MODEL_PATHS.items()
-}
+models = {}
+
+
+def get_model(
+    model_name: str
+):
+
+    model = models.get(
+        model_name
+    )
+
+    if model is not None:
+
+        return model
+
+    model_path = MODEL_PATHS.get(
+        model_name
+    )
+
+    if not model_path:
+
+        raise ValueError(
+            f"Classification model not found: {model_name}"
+        )
+
+    model = joblib.load(
+        model_path
+    )
+
+    models[model_name] = model
+
+    return model
+
 
 # ============================================================
 # ENTITY CLASSIFICATION
@@ -153,14 +182,9 @@ def classify_entity(
     # GET MODEL
     # ========================================================
 
-    model = models.get(
+    model = get_model(
         model_name
     )
-
-    if model is None:
-        raise ValueError(
-            f"Classification model not found: {model_name}"
-        )
 
     # ========================================================
     # PREDICTION
