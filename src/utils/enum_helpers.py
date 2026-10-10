@@ -9,7 +9,8 @@ from src.configs.enums import (
     ProjectTypes,
     RequestLocation,
     EntityTypeModel,
-    DeviceType
+    DeviceType,
+    EntityType
 )
 
 # ============================================================
@@ -82,4 +83,9 @@ EntityTypeModelHelper = create_enum_helper(
 DeviceTypeHelper = create_enum_helper(
     DeviceType,
     "DeviceType"
+)
+
+EntityTypeHelper = create_enum_helper(
+    EntityType,
+    "EntityType"
 )

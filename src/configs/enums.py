@@ -30,3 +30,11 @@ class DeviceType(Enum):
     MOBILE = "mobile"
     TABLET = "tablet"
     LAPTOP = "laptop"
+
+class EntityType(Enum):
+    IDEA = "idea"
+    REQUIREMENT = "requirement"
+    CONSTRAINT = "constraint"
+    HIGH_LEVEL_FEATURE = "high_level_feature"
+    EXTERNAL_INTERFACE = "external_interface"
+    SCOPE = "scope"

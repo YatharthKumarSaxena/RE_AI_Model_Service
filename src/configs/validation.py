@@ -1,6 +1,8 @@
+from configs.regex import MONGO_ID_REGEX
 from src.configs.field_lengths import FIELD_LENGTHS
 from src.utils.enum_helpers import (
-    ProjectTypesHelper
+    ProjectTypesHelper,
+    EntityTypeHelper
 )
 
 validation_rules = {
@@ -65,5 +67,13 @@ validation_rules = {
             "min": FIELD_LENGTHS["acceptanceCriteriaLength"]["min"],
             "max": FIELD_LENGTHS["acceptanceCriteriaLength"]["max"]
         }
+    },
+
+    "mongoId": {
+        "regex": MONGO_ID_REGEX
+    },
+
+    "entityType": {
+        "enum": EntityTypeHelper
     }
 }

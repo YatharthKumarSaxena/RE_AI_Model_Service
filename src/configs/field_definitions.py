@@ -145,6 +145,172 @@ FieldDefinitions = {
             "required": False,
             "validation": validation_rules["description"],
             "description": "Entity description"
+        },
+
+
+        # ============================================================
+        # EMBEDDING DATA
+        # ============================================================
+
+        "CREATE_EMBEDDING": {
+
+            "PROJECT_ID": {
+                "field": "projectId",
+                "required": True,
+                "validation": validation_rules["mongoId"],
+                "description": "MongoDB project ID"
+            },
+
+            "ENTITY_ID": {
+                "field": "entityId",
+                "required": True,
+                "validation": validation_rules["mongoId"],
+                "description": "MongoDB entity ID"
+            },
+
+            "ENTITY_TYPE": {
+                "field": "entityType",
+                "required": True,
+                "validation": validation_rules["entityType"],
+                "description": "Entity type"
+            },
+
+            "TITLE": {
+                "field": "title",
+                "required": False,
+                "validation": validation_rules["title"],
+                "description": "Entity title"
+            },
+
+            "DESCRIPTION": {
+                "field": "description",
+                "required": False,
+                "validation": validation_rules["description"],
+                "description": "Entity description"
+            }
+
+        },
+
+        # ============================================================
+        # UPDATE EMBEDDING
+        # ============================================================
+
+        "UPDATE_EMBEDDING": {
+
+            "ENTITY_ID": {
+                "field": "entityId",
+                "required": True,
+                "validation": validation_rules["mongoId"],
+                "description": "MongoDB entity ID"
+            },
+
+            "TITLE": {
+                "field": "title",
+                "required": False,
+                "validation": validation_rules["title"],
+                "description": "Updated entity title"
+            },
+
+            "DESCRIPTION": {
+                "field": "description",
+                "required": False,
+                "validation": validation_rules["description"],
+                "description": "Updated entity description"
+            }
+
+        },
+
+        # ============================================================
+        # FORCE UPDATE EMBEDDING
+        # ============================================================
+
+        "FORCE_UPDATE_EMBEDDING": {
+
+            "ENTITY_ID": {
+                "field": "entityId",
+                "required": True,
+                "validation": validation_rules["mongoId"],
+                "description": "MongoDB entity ID"
+            },
+
+            "TITLE": {
+                "field": "title",
+                "required": False,
+                "validation": validation_rules["title"],
+                "description": "Updated entity title"
+            },
+
+            "DESCRIPTION": {
+                "field": "description",
+                "required": False,
+                "validation": validation_rules["description"],
+                "description": "Updated entity description"
+            }
+
+        },
+
+        # ============================================================
+        # GET EMBEDDING
+        # ============================================================
+
+        "GET_EMBEDDING": {
+
+            "ENTITY_ID": {
+                "field": "entityId",
+                "required": True,
+                "validation": validation_rules["mongoId"],
+                "description": "MongoDB entity ID"
+            }
+
+        },
+
+        # ============================================================
+        # LIST EMBEDDINGS
+        # ============================================================
+
+        "LIST_EMBEDDINGS": {
+
+            "PROJECT_ID": {
+                "field": "projectId",
+                "required": False,
+                "validation": validation_rules["mongoId"],
+                "description": "MongoDB project ID"
+            },
+
+            "ENTITY_TYPE": {
+                "field": "entityType",
+                "required": False,
+                "validation": validation_rules["entityType"],
+                "description": "Entity type filter"
+            },
+
+            "PAGE": {
+                "field": "page",
+                "required": False,
+                "description": "Page number"
+            },
+
+            "LIMIT": {
+                "field": "limit",
+                "required": False,
+                "description": "Number of embeddings per page"
+            }
+
+        },
+
+        # ============================================================
+        # DELETE EMBEDDING
+        # ============================================================
+
+        "DELETE_EMBEDDING": {
+
+            "ENTITY_ID": {
+                "field": "entityId",
+                "required": True,
+                "validation": validation_rules["mongoId"],
+                "description": "MongoDB entity ID"
+            }
+
         }
 
     }
