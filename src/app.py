@@ -30,6 +30,9 @@ cors_middleware(app)
 # 2. Global rate limiter
 @app.before_request
 def apply_global_rate_limiter():
+    if request.endpoint == "health":
+        return None
+
     return global_limiter()
 
 

@@ -1,8 +1,11 @@
+from flask import jsonify
+
 from src.configs.uris import (
     LLM_BASE,
     CLASSIFICATION_BASE,
     DATA_INSIGHT_BASE,
-    EVALUATION_BASE
+    EVALUATION_BASE,
+    HEALTH_ROUTE
 )
 
 from src.routes.llm import (
@@ -22,7 +25,18 @@ from src.routes.evaluation import (
 )
 
 
+def health_check():
+    return jsonify({"status": "ok"})
+
+
 def register_routes(app):
+
+    app.add_url_rule(
+        HEALTH_ROUTE,
+        endpoint="health",
+        view_func=health_check,
+        methods=["GET"]
+    )
 
     # LLM routes
     app.register_blueprint(

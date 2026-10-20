@@ -5,6 +5,8 @@ API_VERSION = "/api/v1"
 
 API_PREFIX = f"{BASE_PATH}{API_VERSION}"
 
+HEALTH_ROUTE = "/health"
+
 LLM_BASE = f"{API_PREFIX}/llm"
 CLASSIFICATION_BASE = f"{API_PREFIX}/classification"
 DATA_INSIGHT_BASE = f"{API_PREFIX}/data-insight"
